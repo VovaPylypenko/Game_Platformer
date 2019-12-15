@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class CustomNetworkManager : NetworkManager
 {
     int _changedScene = -1;
-    int sceneOrderPlayer = 2;
-    int sceneArenaMapping = 3;
-    int sceneGame = 4;
+    int sceneOrderPlayer = 1;
+    int sceneArenaMapping = 2;
+    int sceneGame = 3;
     
     public int chosenCharacter = 0;
     
@@ -26,6 +26,7 @@ public class CustomNetworkManager : NetworkManager
 
     void Update()
     {
+        Debug.Log(_changedScene);
         if (_changedScene == -1)
             return;
         
@@ -39,33 +40,36 @@ public class CustomNetworkManager : NetworkManager
         }
         else if (_changedScene == sceneGame)
         {
-            if(NetworkServer.active)
+            //SetupOtherSceneButtons();
+            if (NetworkServer.active)
+            {
                 SpawnNetworkedItems();
+            }
         }
         _changedScene = -1;
     }
     
     void SetupOrderPlayerScene()
     {
-        //GameObject.Find("Player1Button").GetComponent<Button>().onClick.AddListener(btn1);
+        GameObject.Find("Player1Button").GetComponent<Button>().onClick.AddListener(btn1);
     }
-    
+
     void SetupMenuSceneButtons()
     {
+        Debug.Log("SetupMenuSceneButtons");
+
         GameObject.Find("Join").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("Join").GetComponent<Button>().onClick.AddListener(StartUpHost);
 
         //GameObject.Find("JoinGame").GetComponent<Button>().onClick.RemoveAllListeners();
         //GameObject.Find("JoinGame").GetComponent<Button>().onClick.AddListener(JoinGame);
     }
-    
+
     void SpawnNetworkedItems()
     {
-        //GameObject FireballSpawner = Instantiate(Resources.Load("Game/FireballSpawner", typeof(GameObject))) as GameObject;
-        //GameObject PowerUpManager = Instantiate(Resources.Load("Game/PowerUpManager", typeof(GameObject))) as GameObject;
-        //
-        //NetworkServer.Spawn(FireballSpawner);
-        //NetworkServer.Spawn(PowerUpManager);
+        GameObject BulletSpawner = Instantiate(Resources.Load("BulletSpawner", typeof(GameObject))) as GameObject;
+        
+        NetworkServer.Spawn(BulletSpawner);
         NetworkServer.SpawnObjects();
     }
     
@@ -80,12 +84,13 @@ public class CustomNetworkManager : NetworkManager
     
     public void StartUpHost()
     {
+        Debug.Log("StartUpHost");
         if (NetworkClient.active || NetworkServer.active)
             return;
 
         NetworkManager.singleton.networkPort = 7777;
         NetworkManager.singleton.StartHost();
-
+        //SceneManager.LoadScene("Scenes/Arena");
     }
     
     //subclass for sending network messages
@@ -102,7 +107,8 @@ public class CustomNetworkManager : NetworkManager
 
         if (selectedClass == 0)
         {
-            GameObject player = Instantiate(Resources.Load("Characters/Player", typeof(GameObject))) as GameObject;
+            Object playerGameObject = Resources.Load("Player", typeof(GameObject));
+            GameObject player = Instantiate(playerGameObject) as GameObject;
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }
     }

@@ -19,11 +19,12 @@ public class PlayerJump : NetworkBehaviour
 
     void Update()
     {
+        Debug.Log(grounded);
         if (!isLocalPlayer)
         {
             return;
         }
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
             grounded = false;
             Jump();
@@ -31,7 +32,7 @@ public class PlayerJump : NetworkBehaviour
         if (rb2D.velocity.y < 0)
         {
             rb2D.velocity += Time.deltaTime * Physics2D.gravity.y * (fallMultiplier - 1) * Vector2.up;
-        } else if (rb2D.velocity.y > 0 && !Input.GetButton("Jump"))
+        } else if (rb2D.velocity.y > 0 && !Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb2D.velocity += Time.deltaTime * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Vector2.up;
         }

@@ -56,10 +56,6 @@ public class Player : NetworkBehaviour
         {
             Invoke(nameof(ReloadLevel), 1);
         }
-        if (other.gameObject.CompareTag($"complete_level"))
-        {
-            Debug.Log("WIN!");
-        }
     }
     
     private void Flip()

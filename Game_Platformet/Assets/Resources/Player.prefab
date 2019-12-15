@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4800391575518990593}
   - component: {fileID: 3833427945806093839}
   - component: {fileID: 3758781430609780246}
+  - component: {fileID: 2026661755226443983}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -96,8 +97,6 @@ MonoBehaviour:
   skins: []
   guns: []
   bullet: {fileID: 541042743582921724, guid: 4edb4ed5ba6cb49e08217b09127612cc, type: 3}
-  fallMultiplier: 2
-  lowJumpMultiplier: 4
 --- !u!114 &8701957593964401227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +161,7 @@ Animation:
   m_GameObject: {fileID: 396256255280717184}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 864e0587ed54c45109f5c147547dff4b, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -178,7 +177,7 @@ Animator:
   m_GameObject: {fileID: 396256255280717184}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: edb6a4cdd6dc64556adb63ba6c565301, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -187,6 +186,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2026661755226443983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396256255280717184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4eca7bd6bab4d3580e64365ac39b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!1 &7992198915053688229
 GameObject:
   m_ObjectHideFlags: 0
