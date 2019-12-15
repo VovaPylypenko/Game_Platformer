@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3833427945806093839}
   - component: {fileID: 3758781430609780246}
   - component: {fileID: 2026661755226443983}
+  - component: {fileID: -6958782216196872696}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -200,6 +201,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+--- !u!114 &-6958782216196872696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396256255280717184}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e6caca150d457191880a66fc05eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
 --- !u!1 &7992198915053688229
 GameObject:
   m_ObjectHideFlags: 0

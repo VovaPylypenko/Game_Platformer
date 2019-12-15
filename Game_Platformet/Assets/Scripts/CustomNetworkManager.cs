@@ -67,9 +67,9 @@ public class CustomNetworkManager : NetworkManager
 
     void SpawnNetworkedItems()
     {
-        GameObject BulletSpawner = Instantiate(Resources.Load("BulletSpawner", typeof(GameObject))) as GameObject;
+        //GameObject BulletSpawner = Instantiate(Resources.Load("FireballSpawner", typeof(GameObject))) as GameObject;
         
-        NetworkServer.Spawn(BulletSpawner);
+        //NetworkServer.Spawn(BulletSpawner);
         NetworkServer.SpawnObjects();
     }
     
