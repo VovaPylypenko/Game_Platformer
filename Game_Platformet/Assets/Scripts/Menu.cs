@@ -5,19 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public string orderPlayerScene;
-    
     private void goToScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
-
-    public void GoToOrderPlayerScene()
-    {
-        goToScene(orderPlayerScene);
-    }
-    
-    public void GoToArenaMappingScene(string scene)
+    public void GoToScene(string scene)
     {
         goToScene(scene);
     }
