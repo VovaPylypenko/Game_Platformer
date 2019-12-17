@@ -509,7 +509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e8bbbe022db4031bcb0bb123686a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderPlayerScene: 
 --- !u!1 &1091282336
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +682,8 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 0
   m_OfflineScene: MainMenu
   m_OnlineScene: Arena
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 6546847455397127218, guid: 55da82e4c7cff4a448d4aea16201ba12, type: 3}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
