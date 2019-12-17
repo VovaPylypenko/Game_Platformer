@@ -11,6 +11,8 @@ public class CustomNetworkManager : NetworkManager
     int sceneOrderPlayer = 1;
     int sceneArenaMapping = 2;
     int sceneGame = 3;
+
+    //private bool serverOn = false;
     
     public int chosenCharacter = 0;
     
@@ -26,7 +28,6 @@ public class CustomNetworkManager : NetworkManager
 
     void Update()
     {
-        Debug.Log(_changedScene);
         if (_changedScene == -1)
             return;
         
@@ -56,13 +57,11 @@ public class CustomNetworkManager : NetworkManager
 
     void SetupMenuSceneButtons()
     {
-        Debug.Log("SetupMenuSceneButtons");
-
         GameObject.Find("Join").GetComponent<Button>().onClick.RemoveAllListeners();
-        GameObject.Find("Join").GetComponent<Button>().onClick.AddListener(StartUpHost);
-
-        //GameObject.Find("JoinGame").GetComponent<Button>().onClick.RemoveAllListeners();
-        //GameObject.Find("JoinGame").GetComponent<Button>().onClick.AddListener(JoinGame);
+        GameObject.Find("Join").GetComponent<Button>().onClick.AddListener(JoinGame);
+        
+        GameObject.Find("Create").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("Create").GetComponent<Button>().onClick.AddListener(StartUpHost);
     }
 
     void SpawnNetworkedItems()
@@ -90,7 +89,6 @@ public class CustomNetworkManager : NetworkManager
 
         NetworkManager.singleton.networkPort = 7777;
         NetworkManager.singleton.StartHost();
-        //SceneManager.LoadScene("Scenes/Arena");
     }
     
     //subclass for sending network messages

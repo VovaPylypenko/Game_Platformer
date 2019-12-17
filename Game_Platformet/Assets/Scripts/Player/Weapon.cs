@@ -12,6 +12,10 @@ public class Weapon : NetworkBehaviour
     
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
