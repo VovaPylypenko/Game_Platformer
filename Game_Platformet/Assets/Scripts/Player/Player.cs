@@ -14,12 +14,9 @@ public class Player : NetworkBehaviour
     [Header("Guns")] public GameObject[] guns;
     [Header("Bullet")] public GameObject bullet;
 
-   // private Animator animator;
-
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
     }
     
     void Update()
@@ -30,11 +27,10 @@ public class Player : NetworkBehaviour
         }
         if (Input.GetAxis("Horizontal") == 0)
         {
-            //animator.SetBool("isRunnig", false);
+
         }
         else
         {
-            //animator.SetBool("isRunnig", true);
             Flip();
         }
     }
