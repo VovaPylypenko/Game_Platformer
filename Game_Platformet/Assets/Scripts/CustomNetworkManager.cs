@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class CustomNetworkManager : NetworkManager
 {
@@ -64,9 +66,6 @@ public class CustomNetworkManager : NetworkManager
 
     void SpawnNetworkedItems()
     {
-        //GameObject BulletSpawner = Instantiate(Resources.Load("FireballSpawner", typeof(GameObject))) as GameObject;
-        
-        //NetworkServer.Spawn(BulletSpawner);
         NetworkServer.SpawnObjects();
     }
     
@@ -98,6 +97,10 @@ public class CustomNetworkManager : NetworkManager
     private void SetIPAddress()
     {
         string IpAddress = GameObject.Find("IpAddressText").transform.FindChild("Text").GetComponent<Text>().text;
+        if (string.IsNullOrEmpty(IpAddress))
+        {
+            IpAddress = "localhost";
+        }
         NetworkManager.singleton.networkAddress = IpAddress;
     }
     

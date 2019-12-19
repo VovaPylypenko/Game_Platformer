@@ -18,13 +18,15 @@ public class Weapon : NetworkBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            CmdShoot();
         }
         
     }
 
-    private void Shoot()
+    [Command]
+    private void CmdShoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        NetworkServer.Spawn(bullet);
     }
 }

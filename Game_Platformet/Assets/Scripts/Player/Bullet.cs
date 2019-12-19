@@ -28,12 +28,13 @@ public class Bullet : NetworkBehaviour
         Destroy (gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
+        Debug.Log("IN OnTriggerEnter2D");
+        var playerHealth = other.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
         {
-            enemy.TakeDamage(damage);
+            playerHealth.TakeDamage(damage);
         }
         Destroy(gameObject);
     }

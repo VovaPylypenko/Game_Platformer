@@ -60,10 +60,10 @@ public class Player : NetworkBehaviour
     private void Flip()
     {
         if (Input.GetAxis("Horizontal") > 0)
-            transform.localRotation = Quaternion.Euler(0,0,0);
+            transform.rotation = Quaternion.Euler(0,0,0);
         
         if (Input.GetAxis("Horizontal") < 0)
-            transform.localRotation = Quaternion.Euler(0,180,0);
+            transform.rotation = Quaternion.Euler(0,180,0);
     }
 
     private void ReloadLevel()
