@@ -1,0 +1,15 @@
+# Rider 
+.idea/
+
+# Visual Studio cache directory
+.vs/
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Builds
+bin/
+*.apk
+*.unitypackage

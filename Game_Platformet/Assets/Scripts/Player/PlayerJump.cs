@@ -9,9 +9,7 @@ public class PlayerJump : NetworkBehaviour
     
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    
-    private bool grounded = true;
-    
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -19,14 +17,12 @@ public class PlayerJump : NetworkBehaviour
 
     void Update()
     {
-        Debug.Log(grounded);
         if (!isLocalPlayer)
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            grounded = false;
             Jump();
         }
         if (rb2D.velocity.y < 0)
@@ -35,22 +31,6 @@ public class PlayerJump : NetworkBehaviour
         } else if (rb2D.velocity.y > 0 && !Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb2D.velocity += Time.deltaTime * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Vector2.up;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-        if (!grounded && other.gameObject.tag.Equals("ground"))
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
         }
     }
 

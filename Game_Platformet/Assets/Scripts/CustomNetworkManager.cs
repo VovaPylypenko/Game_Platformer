@@ -11,7 +11,7 @@ public class CustomNetworkManager : NetworkManager
     int sceneOrderPlayer = 1;
     int sceneArenaMapping = 2;
     int sceneGame = 3;
-    
+
     public int chosenCharacter = 0;
     
     void Start()
@@ -26,7 +26,6 @@ public class CustomNetworkManager : NetworkManager
 
     void Update()
     {
-        Debug.Log(_changedScene);
         if (_changedScene == -1)
             return;
         
@@ -56,13 +55,11 @@ public class CustomNetworkManager : NetworkManager
 
     void SetupMenuSceneButtons()
     {
-        Debug.Log("SetupMenuSceneButtons");
-
         GameObject.Find("Join").GetComponent<Button>().onClick.RemoveAllListeners();
-        GameObject.Find("Join").GetComponent<Button>().onClick.AddListener(StartUpHost);
-
-        //GameObject.Find("JoinGame").GetComponent<Button>().onClick.RemoveAllListeners();
-        //GameObject.Find("JoinGame").GetComponent<Button>().onClick.AddListener(JoinGame);
+        GameObject.Find("Join").GetComponent<Button>().onClick.AddListener(JoinGame);
+        
+        GameObject.Find("Create").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("Create").GetComponent<Button>().onClick.AddListener(StartUpHost);
     }
 
     void SpawnNetworkedItems()
@@ -77,8 +74,9 @@ public class CustomNetworkManager : NetworkManager
     {
         if (NetworkClient.active || NetworkServer.active)
             return;
-
-        NetworkManager.singleton.networkPort = 7777;
+        
+        SetIPAddress();
+        SetPort();
         NetworkManager.singleton.StartClient();
     }
     
@@ -87,10 +85,20 @@ public class CustomNetworkManager : NetworkManager
         Debug.Log("StartUpHost");
         if (NetworkClient.active || NetworkServer.active)
             return;
-
-        NetworkManager.singleton.networkPort = 7777;
+        
+        SetPort();
         NetworkManager.singleton.StartHost();
-        //SceneManager.LoadScene("Scenes/Arena");
+    }
+    
+    void SetPort()
+    {
+        NetworkManager.singleton.networkPort = 7777;
+    }
+    
+    private void SetIPAddress()
+    {
+        string IpAddress = GameObject.Find("IpAddressText").transform.FindChild("Text").GetComponent<Text>().text;
+        NetworkManager.singleton.networkAddress = IpAddress;
     }
     
     //subclass for sending network messages
