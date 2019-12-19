@@ -9,6 +9,7 @@ public class PlayerHealth : NetworkBehaviour
     
     //[SyncVar(hook = "OnHealthChanged")]
     private int currentHealth;
+    private bool isSavedMood = false;
     
     void Start()
     {
@@ -17,9 +18,18 @@ public class PlayerHealth : NetworkBehaviour
     
     public void TakeDamage(int damage)
     {
-        if (!isServer)
+        if (!isLocalPlayer)
             return;
 
         currentHealth -= damage;
+        
+        StartCoroutine("beSAVED");
+    }
+    
+    IEnumerator beSAVED()
+    {
+        isSavedMood = true;
+        yield return new WaitForSeconds(.5f);
+        isSavedMood = false;
     }
 }
