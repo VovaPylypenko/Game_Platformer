@@ -120,7 +120,19 @@ public class CustomNetworkManager : NetworkManager
         {
             Object playerGameObject = Resources.Load("Player", typeof(GameObject));
             GameObject player = Instantiate(playerGameObject) as GameObject;
+            player.transform.position = getPlayerPosition();
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        }
+    }
+
+    private Vector3 getPlayerPosition() {
+        int numberOfPlayerObjects = GameObject.FindObjectsOfType(typeof(Player)).Length;
+        if(numberOfPlayerObjects == 1) {
+            return new Vector3(-13.35F, 2.3F);
+        } else if(numberOfPlayerObjects == 2) {
+            return new Vector3(13.35F, 2.3F);
+        } else {
+            return new Vector3(0, 0);
         }
     }
     
