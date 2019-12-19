@@ -77,6 +77,7 @@ public class CustomNetworkManager : NetworkManager
         if (NetworkClient.active || NetworkServer.active)
             return;
 
+        //NetworkManager.singleton.networkAddress = "172.20.10.10";
         NetworkManager.singleton.networkPort = 7777;
         NetworkManager.singleton.StartClient();
     }
