@@ -96,7 +96,7 @@ public class CustomNetworkManager : NetworkManager
     
     private void SetIPAddress()
     {
-        string IpAddress = GameObject.Find("IpAddressText").transform.FindChild("Text").GetComponent<Text>().text;
+        string IpAddress = GameObject.Find("IpAddressText").transform.Find("Text").GetComponent<Text>().text;
         if (string.IsNullOrEmpty(IpAddress))
         {
             IpAddress = "localhost";

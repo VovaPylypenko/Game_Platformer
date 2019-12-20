@@ -39,6 +39,23 @@ public class Player : NetworkBehaviour
         }
         rb2D.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb2D.velocity.y);
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+        if (other.gameObject.CompareTag($"enemy"))
+        {
+            Invoke(nameof(ReloadLevel), 1);
+        }
+        if (other.gameObject.name == "HealthBonus")
+        {
+            Debug.Log("asdad");
+            GetComponent<PlayerHealth>().health = GetComponent<PlayerHealth>().health + 2;
+            Destroy(other.gameObject);
+        }
+    }
 
     private void Flip()
     {
