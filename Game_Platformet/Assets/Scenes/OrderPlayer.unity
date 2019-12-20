@@ -1079,6 +1079,7 @@ MonoBehaviour:
   m_OnlineScene: Arena
   m_SpawnPrefabs:
   - {fileID: 6546847455397127218, guid: 55da82e4c7cff4a448d4aea16201ba12, type: 3}
+  - {fileID: 1150814439153744380, guid: fb111e7fbef304a8f8ecfdbefdc7ce83, type: 3}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:

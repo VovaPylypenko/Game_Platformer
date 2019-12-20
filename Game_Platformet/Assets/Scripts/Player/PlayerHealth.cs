@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class PlayerHealth : NetworkBehaviour
 {
-    public int health = 100;
+    public int health = 3;
     
     //[SyncVar(hook = "OnHealthChanged")]
     private int currentHealth;

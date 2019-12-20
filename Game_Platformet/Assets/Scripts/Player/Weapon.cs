@@ -5,7 +5,6 @@ using UnityEngine.Networking;
 
 public class Weapon : NetworkBehaviour
 {
-
     public Transform firePoint;
 
     public GameObject bulletPrefab;

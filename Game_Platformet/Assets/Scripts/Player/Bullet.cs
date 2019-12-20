@@ -6,9 +6,8 @@ using UnityEngine.Networking;
 
 public class Bullet : NetworkBehaviour
 {
-
     public float speed = 20f;
-    public int damage = 40;
+    public int damage = 1;
     [Header("delay time")]
     public float delay = 1.0f;
     private Rigidbody2D rb2D;
@@ -35,6 +34,13 @@ public class Bullet : NetworkBehaviour
         {
             playerHealth.TakeDamage(damage);
         }
+
+        var shield = other.GetComponent<Shield>();
+        if (shield != null)
+        {
+            shield.TakeDamage(damage);
+        }
+        
         Destroy(gameObject);
     }
 }
