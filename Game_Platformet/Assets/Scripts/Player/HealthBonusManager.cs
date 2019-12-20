@@ -5,14 +5,14 @@ using UnityEngine.Networking;
 
 public class HealthBonusManager : NetworkBehaviour
 {
-    private Vector3[] vectors = {
-            new Vector3(-8.6F, 5.8F),
-            new Vector3(8.6F, 5.8F),
-            new Vector3(-10.5F, 3.4F),
-            new Vector3(10.5F, 3.4F),
-            new Vector3(-5.6F, -6F),
-            new Vector3(5.6F, -6F),
-            new Vector3(0.4F, 0F)
+    private Vector2[] vectors = {
+            new Vector2(-8.6F, 5.8F),
+            new Vector2(8.6F, 5.8F),
+            new Vector2(-10.5F, 3.4F),
+            new Vector2(10.5F, 3.4F),
+            new Vector2(-5.6F, -6F),
+            new Vector2(5.6F, -6F),
+            new Vector2(0.4F, 0F)
             };
 
     // Start is called before the first frame update
@@ -23,9 +23,13 @@ public class HealthBonusManager : NetworkBehaviour
 
     private void SpawnBonus()
     {
+        if (!isServer)
+            return;
         Object healthBonus = Resources.Load("HealthBonus", typeof(GameObject));
         GameObject healthBonusObject = Instantiate(healthBonus) as GameObject;
-        healthBonusObject.transform.position = GetRandomPostion();
+        var position = GetRandomPostion();
+        healthBonusObject.transform.position = position;
+
         NetworkServer.Spawn(healthBonusObject);
         //Invoke("SpawnBonus", 9);
     }
