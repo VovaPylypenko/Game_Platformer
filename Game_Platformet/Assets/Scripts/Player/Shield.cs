@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class Shield : NetworkBehaviour
 {
-    public int health = 4;
+    public int health = 2;
 
     private int currentHealth;
     
@@ -27,13 +27,11 @@ public class Shield : NetworkBehaviour
     
     public void TakeDamage(int damage)
     {
-        Debug.Log("TakeDamage");
         currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
             Destroy (gameObject);
         }
-        Debug.Log(currentHealth);
     }
 }
