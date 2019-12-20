@@ -15,7 +15,7 @@ public class Weapon : NetworkBehaviour
         {
             return;
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             CmdShoot();
         }

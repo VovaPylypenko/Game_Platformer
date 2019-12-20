@@ -15,7 +15,7 @@ public class PlayerShield : NetworkBehaviour
         {
             return;
         }
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             CmdMakeShield();
         }

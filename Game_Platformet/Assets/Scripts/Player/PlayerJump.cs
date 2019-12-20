@@ -21,14 +21,14 @@ public class PlayerJump : NetworkBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
         if (rb2D.velocity.y < 0)
         {
             rb2D.velocity += Time.deltaTime * Physics2D.gravity.y * (fallMultiplier - 1) * Vector2.up;
-        } else if (rb2D.velocity.y > 0 && !Input.GetKeyDown(KeyCode.UpArrow))
+        } else if (rb2D.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))
         {
             rb2D.velocity += Time.deltaTime * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Vector2.up;
         }

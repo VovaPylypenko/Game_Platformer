@@ -121,6 +121,29 @@ public class CustomNetworkManager : NetworkManager
             Object playerGameObject = Resources.Load("Player", typeof(GameObject));
             GameObject player = Instantiate(playerGameObject) as GameObject;
             player.transform.position = getPlayerPosition();
+            player.GetComponent<Player>().speed = 12f;
+            player.GetComponent<PlayerHealth>().health = 5;
+            player.GetComponent<Weapon>().bulletPrefab.GetComponent<Bullet>().damage = 1;
+            NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        }
+        else if (selectedClass == 1)
+        {
+            Object playerGameObject = Resources.Load("Player", typeof(GameObject));
+            GameObject player = Instantiate(playerGameObject) as GameObject;
+            player.transform.position = getPlayerPosition();
+            player.GetComponent<Player>().speed = 15f;
+            player.GetComponent<PlayerHealth>().health = 3;
+            player.GetComponent<Weapon>().bulletPrefab.GetComponent<Bullet>().damage = 1;
+            NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        }
+        else if (selectedClass == 2)
+        {
+            Object playerGameObject = Resources.Load("Player", typeof(GameObject));
+            GameObject player = Instantiate(playerGameObject) as GameObject;
+            player.transform.position = getPlayerPosition();
+            player.GetComponent<Player>().speed = 7f;
+            player.GetComponent<PlayerHealth>().health = 10;
+            player.GetComponent<Weapon>().bulletPrefab.GetComponent<Bullet>().damage = 2;
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }
     }
@@ -152,5 +175,15 @@ public class CustomNetworkManager : NetworkManager
     public void btn1()
     {
         chosenCharacter = 0;
+    }
+    
+    public void btn2()
+    {
+        chosenCharacter = 1;
+    }
+    
+    public void btn3()
+    {
+        chosenCharacter = 2;
     }
 }

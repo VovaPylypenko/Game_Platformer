@@ -295,6 +295,17 @@ MonoBehaviour:
           m_StringArgument: ArenaMaping
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1130407756}
+        m_MethodName: btn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &481221135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +643,17 @@ MonoBehaviour:
           m_StringArgument: ArenaMaping
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1130407756}
+        m_MethodName: btn1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &936052881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,6 +938,17 @@ MonoBehaviour:
           m_StringArgument: ArenaMaping
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1130407756}
+        m_MethodName: btn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1023257539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,11 +1053,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Health: 100
+  m_Text: 'Health: 5
 
-    Speed: 90
+    Speed: 12
 
-    Atack: 95'
+    Atack: 1'
 --- !u!222 &1082830882
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1218,11 +1251,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Health: 100
+  m_Text: 'Health: 3
 
-    Speed: 90
+    Speed: 15
 
-    Atack: 95'
+    Atack: 1'
 --- !u!222 &1266732737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1321,6 +1354,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ArenaMaping
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1130407756}
+        m_MethodName: btn1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1425965608
@@ -1453,6 +1497,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ArenaMaping
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1130407756}
+        m_MethodName: btn3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1461970143
@@ -1649,6 +1704,17 @@ MonoBehaviour:
           m_StringArgument: ArenaMaping
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1130407756}
+        m_MethodName: btn3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1863027780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,11 +1820,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Health: 100
+  m_Text: 'Health: 10
 
-    Speed: 90
+    Speed: 7
 
-    Atack: 95'
+    Atack: 2'
 --- !u!222 &1947657673
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,11 +8,7 @@ public class Player : NetworkBehaviour
 {
     private Rigidbody2D rb2D;
 
-    [Header("Controller")] public GameObject[] controller;
-
-    [Header("Skins")] public GameObject[] skins;
-    [Header("Guns")] public GameObject[] guns;
-    [Header("Bullet")] public GameObject bullet;
+    public float speed;
 
     void Start()
     {
@@ -41,7 +37,7 @@ public class Player : NetworkBehaviour
         {
             return;
         }
-        rb2D.velocity = new Vector2(Input.GetAxis("Horizontal") * 12f, rb2D.velocity.y);
+        rb2D.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb2D.velocity.y);
     }
 
     private void Flip()

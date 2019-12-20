@@ -111,8 +111,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1569479, y: -1.0184267}
-  m_Size: {x: 2.0151157, y: 2.5928063}
+  m_Offset: {x: 0.15694785, y: -0.91477275}
+  m_Size: {x: 2.0151157, y: 2.8001142}
   m_Direction: 0
 --- !u!114 &890882265735317598
 MonoBehaviour:
@@ -126,15 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5901b9ba87cfd4826b11439f24b63f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  skins: []
-  guns: []
-  bullet: {fileID: 541042743582921724, guid: 4edb4ed5ba6cb49e08217b09127612cc, type: 3}
+  speed: 12
 --- !u!114 &8701957593964401227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142597afa6af54202a85250798f126b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 0
   alive: 1
 --- !u!114 &6021937207288974381
 MonoBehaviour:
