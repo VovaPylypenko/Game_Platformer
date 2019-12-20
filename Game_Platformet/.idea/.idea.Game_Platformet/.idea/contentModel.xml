@@ -45,6 +45,7 @@
             <e p="Shield.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
           </e>
+          <e p="ResultsController.cs" t="Include" />
           <e p="SoundManager.cs" t="Include" />
         </e>
       </e>
