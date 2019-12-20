@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerAnimation : NetworkBehaviour
 {
     private Animator animator;
 
@@ -13,6 +14,10 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         if (Input.GetAxis("Horizontal") == 0)
         {
             animator.SetBool("isRunning", false);

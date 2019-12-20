@@ -42,21 +42,8 @@ public class Player : NetworkBehaviour
             return;
         }
         rb2D.velocity = new Vector2(Input.GetAxis("Horizontal") * 12f, rb2D.velocity.y);
-        //rb2D.velocity = new Vector2( joystick.Horizontal * 12f, rb2D.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-        if (other.gameObject.CompareTag($"enemy"))
-        {
-            Invoke(nameof(ReloadLevel), 1);
-        }
-    }
-    
     private void Flip()
     {
         if (Input.GetAxis("Horizontal") > 0)

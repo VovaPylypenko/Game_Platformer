@@ -6,8 +6,8 @@ using UnityEngine.Networking;
 public class PlayerHealth : NetworkBehaviour
 {
     public int health = 3;
-    
-    //[SyncVar(hook = "OnHealthChanged")]
+    public bool alive = true;
+
     private int currentHealth;
     private bool isSavedMood = false;
     
@@ -18,12 +18,15 @@ public class PlayerHealth : NetworkBehaviour
     
     public void TakeDamage(int damage)
     {
-        if (!isLocalPlayer)
-            return;
+        if (isSavedMood) return;
 
         currentHealth -= damage;
-        
-        StartCoroutine("beSAVED");
+        if (currentHealth <= 0)
+        {
+            alive = false;
+        }
+        else
+            StartCoroutine("beSAVED");
     }
     
     IEnumerator beSAVED()
