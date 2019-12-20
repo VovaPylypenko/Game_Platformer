@@ -16,6 +16,14 @@ public class PlayerHealth : NetworkBehaviour
         currentHealth = health;
         Debug.Log("health " + health);
     }
+
+    public void UpHealth(int bonusUp)
+    {
+        currentHealth += bonusUp;
+        if (currentHealth > health)
+            currentHealth = health;
+        Debug.Log(currentHealth);
+    }
     
     public void TakeDamage(int damage)
     {
