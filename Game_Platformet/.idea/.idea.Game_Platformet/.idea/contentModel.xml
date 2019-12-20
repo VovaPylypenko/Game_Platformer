@@ -36,6 +36,8 @@
           <e p="Menu.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="Bullet.cs" t="Include" />
+            <e p="HealthBonus.cs" t="Include" />
+            <e p="HealthBonusManager.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerAnimation.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
