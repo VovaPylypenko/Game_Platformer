@@ -88,6 +88,13 @@ public class CustomNetworkManager : NetworkManager
         SetPort();
         NetworkManager.singleton.StartHost();
     }
+
+    public void DoOfflineServer()
+    {
+        Debug.Log("STOP ONLINE");
+        NetworkManager.singleton.StopClient();
+        
+    }
     
     void SetPort()
     {

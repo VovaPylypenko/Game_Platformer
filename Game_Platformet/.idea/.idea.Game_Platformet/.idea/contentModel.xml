@@ -44,6 +44,7 @@
             <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerJump.cs" t="Include" />
             <e p="PlayerShield.cs" t="Include" />
+            <e p="Result.cs" t="Include" />
             <e p="Shield.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
           </e>

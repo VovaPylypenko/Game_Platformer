@@ -19,5 +19,6 @@ public class Result : MonoBehaviour
         yield return new WaitForSeconds(wait);
         Destroy(gameObject);
         //todo script for future logic
+        GameObject.Find("NetworkManager").GetComponent<CustomNetworkManager>().DoOfflineServer();
     }
 }
