@@ -11,21 +11,11 @@ public class ResultsController : NetworkBehaviour
     [SyncVar]
     bool isGameOverVar;
     
-    public Sprite victory;
-    public Sprite lose;
-    
     Canvas characterInfoPanel;
-    
-    Image result;
 
-    
     void Start()
     {
-        if (isLocalPlayer)
-        {
-            result = GameObject.Find("ResultImage").GetComponent<Image>();
-            result.sprite = lose;
-        }
+
     }
 
     void Victory()
@@ -33,9 +23,14 @@ public class ResultsController : NetworkBehaviour
         if (!isLocalPlayer)
         {
             Debug.Log("WIN");
-            result = GameObject.Find("ResultImage").GetComponent<Image>();
-            result.sprite = victory;
-        }
+            if(GameObject.FindObjectsOfType(typeof(Result)).Length == 0)
+            {
+                Object win = Resources.Load("Win", typeof(GameObject));
+                GameObject winObject = Instantiate(win) as GameObject;
+                winObject.transform.position = new Vector3(0, 0);
+                NetworkServer.Spawn(winObject);
+            }
+        } 
     }
 
     void Defeat()
@@ -43,9 +38,15 @@ public class ResultsController : NetworkBehaviour
         if (isLocalPlayer)
         {
             Debug.Log("LOSE");
-            
-            result.sprite = lose;
+            if (GameObject.FindObjectsOfType(typeof(Result)).Length == 0)
+            {
+                Object lose = Resources.Load("Lose", typeof(GameObject));
+                GameObject loseObject = Instantiate(lose) as GameObject;
+                loseObject.transform.position = new Vector3(0, 0);
+                NetworkServer.Spawn(loseObject);
+            }
         }
+        
     }
 
     void Update()
