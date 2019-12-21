@@ -539,7 +539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Vlad
+  m_Text: Sasha
 --- !u!222 &905917845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1902,7 +1902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Vlad
+  m_Text: Vova
 --- !u!222 &2022052341
 CanvasRenderer:
   m_ObjectHideFlags: 0
