@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class PlayerHealth : NetworkBehaviour
 {
-    public int health;
+    public int health = 3;
     public bool alive = true;
 
     private int currentHealth;

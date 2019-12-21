@@ -52,7 +52,6 @@ public class CustomNetworkManager : NetworkManager
     
     void SetupOrderPlayerScene()
     {
-        GameObject.Find("Player1Button").GetComponent<Button>().onClick.AddListener(btn1);
     }
 
     void SetupMenuSceneButtons()
@@ -93,7 +92,7 @@ public class CustomNetworkManager : NetworkManager
     {
         Debug.Log("STOP ONLINE");
         NetworkManager.singleton.StopClient();
-        
+        Debug.Log("DEL PLAYER");
     }
     
     void SetPort()

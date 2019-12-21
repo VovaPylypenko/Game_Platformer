@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public class Bullet : NetworkBehaviour
 {
     public float speed = 20f;
-    public int damage;
+    public int damage = 1;
     [Header("delay time")]
     public float delay = 1.0f;
     private Rigidbody2D rb2D;
