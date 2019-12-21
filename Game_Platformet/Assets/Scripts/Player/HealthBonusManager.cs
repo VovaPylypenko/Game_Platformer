@@ -8,8 +8,8 @@ public class HealthBonusManager : NetworkBehaviour
     private Vector2[] vectors = {
             new Vector2(-8.6F, 5.8F),
             new Vector2(8.6F, 5.8F),
-            new Vector2(-10.5F, 3.4F),
-            new Vector2(10.5F, 3.4F),
+            new Vector2(-13.5F, 1F),
+            new Vector2(-13.5F, 1F),
             new Vector2(-5.6F, -6F),
             new Vector2(5.6F, -6F),
             new Vector2(0.4F, 0F)
