@@ -91,6 +91,7 @@ public class CustomNetworkManager : NetworkManager
     public void DoOfflineServer()
     {
         NetworkManager.Shutdown();
+        Destroy(gameObject);
     }
     
     void SetPort()
