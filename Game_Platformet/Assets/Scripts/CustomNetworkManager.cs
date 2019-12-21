@@ -90,9 +90,7 @@ public class CustomNetworkManager : NetworkManager
 
     public void DoOfflineServer()
     {
-        Debug.Log("STOP ONLINE");
-        NetworkManager.singleton.StopClient();
-        Debug.Log("DEL PLAYER");
+        NetworkManager.Shutdown();
     }
     
     void SetPort()

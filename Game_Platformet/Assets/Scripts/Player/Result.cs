@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class Result : MonoBehaviour
+public class Result : NetworkBehaviour
 {
     [Header("delay time")]
     public float delay = 4.0f;
