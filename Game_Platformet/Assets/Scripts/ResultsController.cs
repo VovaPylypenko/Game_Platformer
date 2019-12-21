@@ -31,6 +31,17 @@ public class ResultsController : NetworkBehaviour
                 NetworkServer.Spawn(winObject);
             }
         } 
+        else
+        {
+            Debug.Log("LOSE");
+            if (GameObject.FindObjectsOfType(typeof(Result)).Length == 0)
+            {
+                Object lose = Resources.Load("Lose", typeof(GameObject));
+                GameObject loseObject = Instantiate(lose) as GameObject;
+                loseObject.transform.position = new Vector3(0, 0);
+                NetworkServer.Spawn(loseObject);
+            }
+        }
     }
 
     void Defeat()
@@ -44,6 +55,17 @@ public class ResultsController : NetworkBehaviour
                 GameObject loseObject = Instantiate(lose) as GameObject;
                 loseObject.transform.position = new Vector3(0, 0);
                 NetworkServer.Spawn(loseObject);
+            }
+        }
+        else
+        {
+            Debug.Log("WIN");
+            if (GameObject.FindObjectsOfType(typeof(Result)).Length == 0)
+            {
+                Object win = Resources.Load("Win", typeof(GameObject));
+                GameObject winObject = Instantiate(win) as GameObject;
+                winObject.transform.position = new Vector3(0, 0);
+                NetworkServer.Spawn(winObject);
             }
         }
         
