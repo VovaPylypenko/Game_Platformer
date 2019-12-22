@@ -8,5 +8,5 @@ Space - Jump
 Right and lest arrow - going
 
 # Screenshot
-![](screenshot/screenshot1.jpeg)
-![](screenshot/screenshot2.jpeg)
+<img src="https://github.com/VovaPylypenko/Game_Platformer/blob/master/Screenshots/screenshot1.jpeg">
+<img src="https://github.com/VovaPylypenko/Game_Platformer/blob/master/Screenshots/screenshot2.jpeg">
